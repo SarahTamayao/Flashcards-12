@@ -7,7 +7,7 @@ IOS Application that displays double sided flashcard on touch with questions and
 
 ### App Walk-though
 
-<img src=https://recordit.co/pKxrfMTJ5S width=200><br>
+<img src= "https://recordit.co/pKxrfMTJ5S" width=200><br>
 
 ## Required
 - [x] Create New Project in Xcode
