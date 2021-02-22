@@ -19,8 +19,21 @@ class ViewController: UIViewController {
     
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
-        questionLabel.isHidden = true;
+        print("First Tapped Card")
+//        questionLabel.isHidden.toggle();
+        if questionLabel.isHidden == true {
+            questionLabel.isHidden = false
+        } else {
+            questionLabel.isHidden = true
+        }
+
+        
+    }
+
     }
     
-}
+
+
+
+
 

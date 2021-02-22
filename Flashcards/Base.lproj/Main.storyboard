@@ -55,7 +55,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="aSL-JU-DUd">
                     <connections>
-                        <action selector="didTapOnFlashcard:" destination="BYZ-38-t0r" id="hIP-S8-3Wh"/>
+                        <action selector="didTapOnFlashcard:" destination="BYZ-38-t0r" id="F60-8W-CPl"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="o1p-CM-o9O">
+                    <connections>
+                        <action selector="didTapOnAnswer:" destination="BYZ-38-t0r" id="ct0-3E-4zy"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
