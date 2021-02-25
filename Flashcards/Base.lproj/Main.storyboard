@@ -49,7 +49,7 @@
                     </view>
                     <connections>
                         <outlet property="answerLabel" destination="7Fa-aA-L66" id="Pjg-6c-Gg0"/>
-                        <outlet property="card" destination="icY-pH-Y6u" id="4xb-wo-qHn"/>
+                        <outlet property="card" destination="lNW-r8-5pq" id="eO8-vE-5kJ"/>
                         <outlet property="questionLabel" destination="icY-pH-Y6u" id="4mf-D0-0lk"/>
                     </connections>
                 </viewController>

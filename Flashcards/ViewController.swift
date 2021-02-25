@@ -36,7 +36,8 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var card: UILabel!
+    @IBOutlet weak var card: UIView!
+    
     
     
     }
