@@ -81,7 +81,7 @@
 		71387E4D25E1950B0090A246 = {
 			isa = PBXGroup;
 			children = (
-				71ECB20725F4125F005F747C /* CreationViewController.swift */,
+				71C7CC6D25FAD1E7006D5DCB /* ViewControllers */,
 				71387E5825E1950B0090A246 /* Flashcards */,
 				71387E6F25E1950D0090A246 /* FlashcardsTests */,
 				71387E7A25E1950D0090A246 /* FlashcardsUITests */,
@@ -104,7 +104,6 @@
 			children = (
 				71387E5925E1950B0090A246 /* AppDelegate.swift */,
 				71387E5B25E1950B0090A246 /* SceneDelegate.swift */,
-				71387E5D25E1950B0090A246 /* ViewController.swift */,
 				71387E5F25E1950B0090A246 /* Main.storyboard */,
 				71387E6225E1950D0090A246 /* Assets.xcassets */,
 				71387E6425E1950D0090A246 /* LaunchScreen.storyboard */,
@@ -129,6 +128,15 @@
 				71387E7D25E1950D0090A246 /* Info.plist */,
 			);
 			path = FlashcardsUITests;
+			sourceTree = "<group>";
+		};
+		71C7CC6D25FAD1E7006D5DCB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				71387E5D25E1950B0090A246 /* ViewController.swift */,
+				71ECB20725F4125F005F747C /* CreationViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
