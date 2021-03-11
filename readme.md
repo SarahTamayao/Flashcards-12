@@ -1,5 +1,24 @@
 ## FLASHCARDS APP
 
+## Lab 2
+
+### App Description
+Flashcards app that displays a two-sided flashcard, each with a question and answer respectively. user can click on the flashcard to see the other side or the answer label, but can also click the multiple choice answers to test their knowledge. Users can also get into a new screen where they can input a new question and answer.
+
+### App Walk-though
+
+<img src="https://recordit.co/eMBarUXm96.gif" width=200><br>
+
+## Required
+- [x] User can open the creation screen
+- [x] User can cancel out of the creation screen
+- [x] User can enter a new question and answer in the creation screen to then show it on the flashcard
+- [x] Push code to GitHub
+## Optional
+- [ ] User gets an error if they try to create a new flashcard with no question or answer
+- [ ] User can edit existing flashcard
+- [ ] User can add multiple choice answers in the creation screen
+
 ## Lab 1
 
 ### App Description
