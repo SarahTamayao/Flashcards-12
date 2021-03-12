@@ -48,7 +48,10 @@ class CreationViewController: UIViewController {
         
         let answer2Text = extraAnswerTwo.text
         
-        if questionText == nil || answerText == nil || questionText!.isEmpty || answerText!.isEmpty {
+        if questionText == nil || answerText == nil || answer1Text == nil || answerText == nil || questionText!.isEmpty || answerText!.isEmpty ||
+            answer1Text!.isEmpty ||
+            answer2Text!.isEmpty
+            {
             let alert = UIAlertController(title: "Missing Text", message: "You need to enter both a question and an answer", preferredStyle: .alert)
             present(alert, animated:true)
             let okAction = UIAlertAction(title: "Ok", style: .default)
