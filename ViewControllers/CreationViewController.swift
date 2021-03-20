@@ -20,12 +20,17 @@ class CreationViewController: UIViewController {
     
     var initialQuestion: String?
     var initialAnswer: String?
+    // var answerOne: String?
+    // var answerTwo: String?
     
     var flashcardsController: ViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        // extraAnswerOne.text = answerOne
+        // extraAnswerTwo.text = answerTwo
         questionTextField.text = initialQuestion
         answerTextField.text = initialAnswer
         // Do any additional setup after loading the view.
@@ -35,7 +40,6 @@ class CreationViewController: UIViewController {
     @IBAction func didTapOnCancel(_ sender: Any) {
         dismiss(animated:true)
     }
-    
 
         
     @IBAction func didTapOnDone(_ sender: Any) {

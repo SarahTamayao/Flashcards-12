@@ -7,6 +7,13 @@
 
 import UIKit
 
+struct Flashcard {
+    var question: String
+    var answer: String
+    var answer1: String
+    var answer2: String
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var card: UIView!
@@ -18,11 +25,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonOptionTwo: UIButton!
     @IBOutlet weak var buttonOptionThree: UIButton!
     
+    var flashcards = [Flashcard]()
+    
+    var currentIndex = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        readSavedFlashcards()
+        
+        if flashcards.count == 0 {
+            updateFlashcard(question: "Whats the capital of Brazil", answer: "Brasilia", answer1: "Madrid", answer2: "San Jose")
+        } else {
+            updateLabels()
+            updateNextPrevButtons()
+        }
+        
+        updateFlashcard(question: "Whats the capital of Brazil?", answer: "Brasilia", answer1: "Madrid", answer2: "San Jose")
+
         buttonOptionOne.layer.cornerRadius = 20.0
         buttonOptionTwo.layer.cornerRadius = 20.0
         buttonOptionThree.layer.cornerRadius = 20.0
@@ -56,13 +78,27 @@ class ViewController: UIViewController {
         }
     }
     func updateFlashcard(question: String, answer: String, answer1: String?, answer2: String?) {
+        let flashcard = Flashcard(question: question, answer: answer, answer1: answer1!, answer2: answer2!)
         questionLabel.text = question
         answerLabel.text = answer
+        
+       
+        flashcards.append(flashcard)
+        print("Added new flashcard")
+        print("We now have \(flashcards.count) flashcards")
+        
+        currentIndex = flashcards.count - 1
+        print("Our current index is \(currentIndex)")
+        
+        updateNextPrevButtons()
         
         buttonOptionOne.setTitle(answer1, for: .normal)
         buttonOptionTwo.setTitle(answer, for: .normal)
         buttonOptionThree.setTitle(answer2, for: .normal)
         
+        updateLabels()
+        
+        saveAllFlashcardsToDisk()
     }
     
     @IBAction func didTapOptionOne(_ sender: Any) {
@@ -89,8 +125,69 @@ class ViewController: UIViewController {
         }
     }
     
+    func updateLabels() {
+        let currentFlashcard = flashcards[currentIndex]
+        
+        questionLabel.text = currentFlashcard.question
+        answerLabel.text = currentFlashcard.answer
+        
+    }
+    
+    @IBOutlet weak var prevButton: UIButton!
+    
+    @IBOutlet weak var nextButton: UIButton!
+    
+    @IBAction func didTapOnPrev(_ sender: Any) {
+        
+        currentIndex = currentIndex - 1
+        
+        updateLabels()
+        
+        updateNextPrevButtons()
+    }
+    
+    @IBAction func didTapOnNext(_ sender: Any) {
+        
+        currentIndex = currentIndex + 1
+        
+        updateLabels()
+        
+        updateNextPrevButtons()
+    }
+    func updateNextPrevButtons() {
+        if currentIndex == flashcards.count - 1 {
+            nextButton.isEnabled = false
+        } else {
+            nextButton.isEnabled = true
+        }
+        if currentIndex == 0{
+            prevButton.isEnabled = false
+        } else {
+            prevButton.isEnabled = true
+        }
+    }
+    
+    func saveAllFlashcardsToDisk() {
+        
+        let dictionaryArray = flashcards.map { (card) -> [String : String] in
+            return ["question":card.question, "answer":card.answer, "answer1":card.answer1, "answer2":card.answer2]
+        }
+        
+        UserDefaults.standard.set(dictionaryArray, forKey: "flashcards")
+        
+        print("Flashcards saved to userdefaults")
+    }
+    
+    func readSavedFlashcards() {
+    if let dictionaryArray = UserDefaults.standard.array(forKey: "flashcards") as? [[String: String]] {
+        let savedCards = dictionaryArray.compactMap { dictionary -> Flashcard in
+            return Flashcard(question: dictionary["question"] ?? "placeholder", answer: dictionary["answer"] ?? "placeholder", answer1: dictionary["answer1"] ?? "placeholder", answer2: dictionary["answer2"] ?? "placeholder")
+        }
+        flashcards.append(contentsOf: savedCards)
+    }
     
     }
+}
     
 
 

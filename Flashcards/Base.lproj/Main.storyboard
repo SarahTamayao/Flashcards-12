@@ -95,6 +95,24 @@
                                     <segue destination="qRB-m6-6QX" kind="presentation" id="iHW-I1-TWw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Es5-Xv-921">
+                                <rect key="frame" x="351" y="781" width="41" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="didTapOnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ifk-N3-gPl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sT8-JF-DFE">
+                                <rect key="frame" x="25" y="782" width="40" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Prev"/>
+                                <connections>
+                                    <action selector="didTapOnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oiI-BM-Ba3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -105,6 +123,8 @@
                         <outlet property="buttonOptionThree" destination="r5F-Sh-Ssa" id="Uv4-ez-vOy"/>
                         <outlet property="buttonOptionTwo" destination="Rhq-WZ-rry" id="7lz-9A-ZLi"/>
                         <outlet property="card" destination="lNW-r8-5pq" id="eO8-vE-5kJ"/>
+                        <outlet property="nextButton" destination="Es5-Xv-921" id="hTt-Le-BSf"/>
+                        <outlet property="prevButton" destination="sT8-JF-DFE" id="L8O-Y8-Thp"/>
                         <outlet property="questionLabel" destination="icY-pH-Y6u" id="4mf-D0-0lk"/>
                     </connections>
                 </viewController>
