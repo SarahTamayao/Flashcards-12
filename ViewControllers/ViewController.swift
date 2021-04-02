@@ -69,6 +69,9 @@ class ViewController: UIViewController {
         answerLabel.layer.cornerRadius = 20.0
     }
     @IBAction func didTapOnFlashcard(_ sender: Any) {
+        flipFlashcard()
+    }
+    func flipFlashcard() {
         print("First Tapped Card")
 //        questionLabel.isHidden.toggle();
         if questionLabel.isHidden == true {
@@ -76,6 +79,10 @@ class ViewController: UIViewController {
         } else {
             questionLabel.isHidden = true
         }
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight) {
+            self.questionLabel.isHidden = true
+        }
+
     }
     func updateFlashcard(question: String, answer: String, answer1: String?, answer2: String?) {
         let flashcard = Flashcard(question: question, answer: answer, answer1: answer1!, answer2: answer2!)
@@ -141,7 +148,7 @@ class ViewController: UIViewController {
         
         currentIndex = currentIndex - 1
         
-        updateLabels()
+        animateCardIn()
         
         updateNextPrevButtons()
     }
@@ -150,9 +157,10 @@ class ViewController: UIViewController {
         
         currentIndex = currentIndex + 1
         
-        updateLabels()
         
         updateNextPrevButtons()
+        
+        animateCardOut()
     }
     func updateNextPrevButtons() {
         if currentIndex == flashcards.count - 1 {
@@ -186,9 +194,44 @@ class ViewController: UIViewController {
         flashcards.append(contentsOf: savedCards)
     }
     
+        
     }
+    @IBAction func didTapOnDelete(_ sender: Any) {
+        let alert = UIAlertController(title: "Delete flashcard", message: "Are you sure you want to delete it?", preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
+            self.deleteCurrentFlashcard()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+       
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        present(alert, animated:true)
+    }
+    func deleteCurrentFlashcard () {
+        
+    }
+    func animateCardOut() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        }, completion: { finished in
+            self.animateCardIn()
+            self.updateLabels()
+        })
+    }
+    func animateCardIn() {
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.card.transform = CGAffineTransform.identity
+            
+            //self.animateCardOut()
+            self.updateLabels()
+        }
 }
+
     
+}
 
 
 

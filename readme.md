@@ -1,5 +1,26 @@
 ## FLASHCARDS APP
 
+## Lab 4
+
+### App Description
+Flashcards app that displays a two-sided flashcard, each with a question and answer respectively. user can click on the flashcard to see the other side or the answer label, but can also click the multiple choice answers to test their knowledge. Users can also get into a new screen where they can input a new question and answer and choice of extra multiple choice answers.
+
+### App Walk-though
+
+<img src="https://recordit.co/BPyDMYBR1d.gif" width=200><br>
+
+## Required
+- [x] User should see the app icon 
+- [x] User should see a splash screen
+- [x] User should see an flip animation when revealing the answer
+- [x] User should see a slide animation when going to the next flashcard
+- [x] User should see a slide animation when going to the previous flashcard
+- [x] Push code to GitHub
+## Optional
+- [ ] User should see a nicer flaschard with rounded corners, shadows, and animating when showing the first time
+- [ ] User should see all views properly layout when using the app on a phone of different sizes
+- [ ] Correct answer in multiple choice should be random
+
 ## Lab 3
 
 ### App Description
