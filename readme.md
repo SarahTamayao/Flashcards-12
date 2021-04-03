@@ -7,7 +7,7 @@ Flashcards app that displays a two-sided flashcard, each with a question and ans
 
 ### App Walk-though
 
-<img src="https://recordit.co/BPyDMYBR1d.gif" width=200><br>
+<img src="https://recordit.co/8nBUv903z1.gif" width=200><br>
 
 ## Required
 - [x] User should see the app icon 
